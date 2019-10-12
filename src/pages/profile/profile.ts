@@ -26,7 +26,7 @@ export class ProfilePage {
     {
       label:`Conta aí, Myllena, qual é a tua meta?`,
       type:'text',
-      placeholder:'Seu nome completo',
+      placeholder:'Digite aqui..',
       value:''
     },
     {
