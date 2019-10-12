@@ -4,4 +4,8 @@ page-tutorial {
     background: transparent;
     border-color: transparent;
   }
+
+  a {
+    color: color($colors, tertiary);
+  }
 }

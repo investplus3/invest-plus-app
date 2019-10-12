@@ -1,35 +1,22 @@
-<!--
-  Generated template for the ProfilePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <!-- <ion-navbar>
-    <ion-title text-center>Perfil</ion-title>
-  </ion-navbar> -->
-</ion-header>
-
 <ion-content padding>
   <ion-slides #slides>
-
     <ion-slide *ngFor="let profile of profiles">
       <h4>{{profile.label}}</h4>
-      <ion-item>
-        <ion-input type="{{profile.type}}" placeholder="{{profile.placeholder}}" value={{profile.value}}></ion-input>
-      </ion-item>
+      <ng-container *ngIf="profile.type == 'month'">
+        <ion-item>
+          <ion-datetime displayFormat="DD/MM/YYYY" [placeholder]="profile.placeholder" [ngModel]=profile.value></ion-datetime>
+        </ion-item>
+      </ng-container>
+      <ng-container *ngIf="profile.type != 'month'">
+        <ion-item>
+          <ion-input [type]="profile.type" [placeholder]="profile.placeholder" [ngModel]=profile.value></ion-input>
+        </ion-item>
+      </ng-container>
     </ion-slide>
-
-
-
   </ion-slides>
-
-
 </ion-content>
 
 <ion-footer no-border>
-
-      <button type="submit" float-left ion-button  color="tertiary" class="btnPrev" (click)="prevSlide()">Voltar</button>
-      <button type="submit" float-right ion-button color="tertiary" class="btnNext" (click)="nextSlide()">Próximo</button>
-
+  <button type="submit" float-left ion-button color="tertiary" class="btnPrev" (click)="prevSlide()">Voltar</button>
+  <button type="submit" float-right ion-button color="tertiary" class="btnNext" (click)="nextSlide()">Próximo</button>
 </ion-footer>
