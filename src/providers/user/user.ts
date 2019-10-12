@@ -10,9 +10,8 @@ export class UserProvider {
   constructor(
     private storage: Storage,
     private firebase: AngularFireDatabase) {
-
-    this.ref = firebase.database.ref('users/');
   }
+  
   public async get(username) {
   }
 
