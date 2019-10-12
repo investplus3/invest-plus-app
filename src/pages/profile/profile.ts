@@ -19,8 +19,8 @@ export class ProfilePage {
     },
     {
       label:`Myllena, me diz agora tua data de nascimento.`,
-      type:'text',
-      placeholder:'Seu nome completo',
+      type:'month',
+      placeholder:'Click aqui..',
       value:''
     },
     {
