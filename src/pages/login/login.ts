@@ -10,6 +10,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class LoginPage {
   username:any;
   password:any;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -39,7 +40,7 @@ export class LoginPage {
     });
   }
 
-  public Sair(): void {
+  public Logoff(): void {
     this.firebaseauth.auth.signOut()
     .then(() => {
       this.exibirToast('Você saiu');
