@@ -8,65 +8,73 @@ import { AngularFireAuth } from 'angularfire2/auth';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  public username: string;
-  public password: string;
+  username:any;
+  password:any;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public toastCtrl: ToastController,
-    public firebaseauth: AngularFireAuth) {
+    public firebaseauth: AngularFireAuth)  {
 
   }
 
 
-  public loginWithEmail(): void {
-    this.firebaseauth.auth.signInWithEmailAndPassword(this.username, this.password)
+  public LoginComEmail(): void {
+    this.firebaseauth.auth.signInWithEmailAndPassword(this.username.value , this.password.value)
       .then(() => {
-        this.navCtrl.setRoot('HomePage');
+        this.exibirToast('Login efetuado com sucesso');
       })
       .catch((erro: any) => {
-        this.viewToast(erro);
+        this.exibirToast(erro);
       });
   }
 
-  public userRegister(): void {
-    this.firebaseauth.auth.createUserWithEmailAndPassword(this.username, this.password)
-      .then(() => {
-        this.viewToast('Usuário criado com sucesso');
-        // this.navCtrl.setRoot('HomePage');
-      })
-      .catch((erro: any) => {
-        this.viewToast(erro);
-      });
-  }
-
-  public logout(): void {
-    this.firebaseauth.auth.signOut()
-      .then(() => {
-        this.viewToast('Você saiu');
-      })
-      .catch((erro: any) => {
-        this.viewToast(erro);
-      });
-  }
-
-  private viewToast(mensagem: string): void {
-    let toast = this.toastCtrl.create({
-      duration: 3000,
-      position: 'botton'
+  public cadastrarUsuario(): void {
+    this.firebaseauth.auth.createUserWithEmailAndPassword(this.username.value , this.password.value)
+    .then(() => {
+      this.exibirToast('Usuário criado com sucesso');
+    })
+    .catch((erro: any) => {
+      this.exibirToast(erro);
     });
+  }
+
+  public Logoff(): void {
+    this.firebaseauth.auth.signOut()
+    .then(() => {
+      this.exibirToast('Você saiu');
+    })
+    .catch((erro: any) => {
+      this.exibirToast(erro);
+    });
+  }
+
+  private exibirToast(mensagem: string): void {
+    let toast = this.toastCtrl.create({duration: 3000,
+                                      position: 'botton'});
     toast.setMessage(mensagem);
     toast.present();
   }
 
   account: { username: string, password: string } = {
-    username: '',
-    password: ''
+    username: 'test@example.com',
+    password: 'test'
   };
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  doLogin() {
+    this.navCtrl.setRoot('HomePage');
+    // Unable to log in
+    // let toast = this.toastCtrl.create({
+    //   message: 'Erro',
+    //   duration: 3000,
+    //   position: 'top'
+    // });
+    // toast.present();
   }
 
 }

@@ -1,23 +1,19 @@
-<ion-header no-shadow >
-  <ion-navbar>
-    <ion-buttons end *ngIf="showSkip">
-      <button ion-button (click)="startApp()" color="primary">Pular</button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
-<ion-content no-bounce class="bio">
-  <ion-slides pager="true" (ionSlideWillChange)="onSlideChangeStart($event)">
-    <ion-slide *ngFor="let slide of slides">
-      <img [src]="slide.image" class="slide-image" />
-      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
-      <p [innerHTML]="slide.description"></p>
+<ion-content padding class="tutorial">
+  <a (click)="startApp()" *ngIf="showSkip">Pular</a>
+  <ion-slides>
+    <ion-slide>
+      <img src="assets/imgs/sunbed.png"><br>
+      <h4>Investir nunca foi sua praia?</h4>
     </ion-slide>
     <ion-slide>
-      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image" />
-      <h2 class="slide-title">Vamos lá</h2>
-      <button ion-button icon-end large clear (click)="startApp()">
-        <ion-icon name="arrow-forward"></ion-icon>
-      </button>
+      <img src="assets/imgs/human.png"><br>
+      <h4>Até agora...</h4>
+    </ion-slide>
+    <ion-slide>
+        <br>
+        <img src="assets/imgs/rich.png"><br>
+        <h4> Com o Invest+ você vai ter um retorno financeiro de forma segura e divertida</h4>
+        <a (click)="startApp()" id="startApp">Clique aqui e embarque nesse rolê com a Invest+</a>
     </ion-slide>
   </ion-slides>
 </ion-content>

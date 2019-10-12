@@ -1,7 +1,22 @@
 page-tutorial {
-    .bio{
-        height:100vh;
-        width:100vw;
+    .tutorial{
         background:linear-gradient(330deg, #5860c0 80%, #ffbe54 80%);
+        color: white;
+        padding-left:10px;
+
+        
+    }
+        
+    a{
+        color:white;
+        font-size: 13px;
+    }
+
+    p{
+        font-size: 16px;
+    }
+
+    #startApp{
+        color:#ffbe54;
     }
 }
