@@ -1,5 +1,7 @@
 {
   "name": "investplus",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
