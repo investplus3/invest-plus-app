@@ -21,7 +21,7 @@ eles gastem exacerbadamente e não poupem, por isso o distanciamento dos investi
 
 # Versões
 
-*Android: ![Android](https://github.com/investplus3/invest-plus-app/blob/master/app-debug.apk)
+[Android](https://github.com/investplus3/invest-plus-app/blob/master/app-debug.apk)
 
 # Time
 
