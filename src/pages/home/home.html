@@ -4,12 +4,33 @@
       <ion-icon color="tertiary" name="menu"></ion-icon>
     </button>
     <ion-title text-center>Invest+</ion-title>
-    <button end ion-button menuToggle  style="pointer-events: none;">
+    <button end ion-button menuToggle style="pointer-events: none;">
       <ion-icon style="color: transparent;" color="tertiary" name="menu"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-list style="background: transparent !important;">
 
+    <ion-item>
+      <ion-label>Produto</ion-label>
+      <ion-select>
+        <ion-option>Tesouro Direto</ion-option>
+        <ion-option>LCI</ion-option>
+        <ion-option>LCA</ion-option>
+        <ion-option>CDB</ion-option>
+        <ion-option>LC</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Valor</ion-label>
+      <ion-input type="tel"></ion-input>
+    </ion-item>
+
+    <ion-buttons padding>
+      <button ion-button color="tertiary" block>Salvar</button>
+    </ion-buttons>
+  </ion-list>
 </ion-content>

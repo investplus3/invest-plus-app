@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon color="tertiary" name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>Ranking</ion-title>
+    <button end ion-button menuToggle style="pointer-events: none;">
+      <ion-icon style="color: transparent;" color="tertiary" name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let person of persons; let i = index">
+      <ion-thumbnail item-start>
+        <img [src]="person.img" style="border-radius: 50%;">
+      </ion-thumbnail>
+      <h2>{{i+1}} - {{person.pontos}}xp</h2>
+      <p>{{person.name}}</p>
+      <button ion-button clear item-end>View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
