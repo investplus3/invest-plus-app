@@ -63,6 +63,8 @@ export class ProfilePage {
 
   nextSlide() {
     this.slides.slideNext();
+    if (this.slides._activeIndex == 5)
+      this.navCtrl.setRoot('HomePage');
   }
 
   prevSlide() {
