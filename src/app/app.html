@@ -1,6 +1,6 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-item class="profile-item">
+    <ion-item class="profile-item" no-lines>
       <div class="profile-picture big-profile-picture">
         <img src="https://picsum.photos/id/1/128">
       </div>
@@ -10,11 +10,13 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <button menuClose ion-item (click)="openPage('HomePage')">
-        Home
+      <button no-padding style="background: transparent;" menuClose ion-item no-line (click)="openPage('HomePage')"
+        color="secondary">
+        &nbsp; Home
       </button>
-      <button menuClose ion-item (click)="openPage('LoginPage')">
-        Sair
+      <button no-padding style="background: transparent;" menuClose ion-item (click)="openPage('LoginPage')"
+        color="secondary">
+        &nbsp; Sair
       </button>
     </ion-list>
   </ion-content>

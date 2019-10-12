@@ -1,6 +1,6 @@
 .profile-item {
   text-align: center;
-  background-color: #5860c0;
+  background-color: color($colors, secondary)
 }
 
 .profile-picture {
@@ -39,4 +39,8 @@ ion-content {
 
 h4, .button-inner, input {
   color: color($colors, primary);
+}
+
+.toolbar-title {
+  color: color($colors, tertiary) !important;
 }
