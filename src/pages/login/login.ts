@@ -19,22 +19,10 @@ export class LoginPage {
 
   }
 
-
-  public loginWithEmail(): void {
+  public login(): void {
     this.firebaseauth.auth.signInWithEmailAndPassword(this.username, this.password)
       .then(() => {
         this.navCtrl.setRoot('HomePage');
-      })
-      .catch((erro: any) => {
-        this.viewToast(erro);
-      });
-  }
-
-  public userRegister(): void {
-    this.firebaseauth.auth.createUserWithEmailAndPassword(this.username, this.password)
-      .then(() => {
-        this.viewToast('Usuário criado com sucesso');
-        // this.navCtrl.setRoot('HomePage');
       })
       .catch((erro: any) => {
         this.viewToast(erro);
@@ -51,6 +39,17 @@ export class LoginPage {
       });
   }
 
+  public register(): void {
+    this.firebaseauth.auth.createUserWithEmailAndPassword(this.username, this.password)
+      .then(() => {
+        this.viewToast('Usuário criado com sucesso');
+        // this.navCtrl.setRoot('HomePage');
+      })
+      .catch((erro: any) => {
+        this.viewToast(erro);
+      });
+  }
+
   private viewToast(mensagem: string): void {
     let toast = this.toastCtrl.create({
       duration: 3000,
@@ -59,11 +58,6 @@ export class LoginPage {
     toast.setMessage(mensagem);
     toast.present();
   }
-
-  account: { username: string, password: string } = {
-    username: '',
-    password: ''
-  };
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
