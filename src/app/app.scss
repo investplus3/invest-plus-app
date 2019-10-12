@@ -1,4 +1,3 @@
-
 .profile-item {
   text-align: center;
   background-color: #5860c0;
@@ -27,11 +26,19 @@
   font-size: x-large !important;
   font-weight: bold !important;
   text-transform: capitalize;
-  color:#FFFFFF;
+  color: color($colors, primary);
 }
 
 .profile-info {
-  color:#FFFFFF;
+  color: color($colors, primary);
+}
+
+ion-content {
+  background: linear-gradient(330deg, color($colors, secondary) 80%, color($colors, tertiary) 80%);
+}
+
+h4, .button-inner, input {
+  color: color($colors, primary);
 }
 
 
